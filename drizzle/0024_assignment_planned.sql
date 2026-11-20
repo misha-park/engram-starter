@@ -1,0 +1,1 @@
+ALTER TABLE `assignments` ADD `planned` integer DEFAULT true NOT NULL;

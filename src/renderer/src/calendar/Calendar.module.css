@@ -1,0 +1,439 @@
+.calendar {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Holds the calendar so a sideways swipe can slide it. */
+.slide {
+  height: 100%;
+}
+
+/* A still copy of the week being swiped away from (see the swipe code in PlannerCalendar). */
+.ghost {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* FullCalendar's own event element: let our content fill it. */
+.fcEvent {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+/*
+ * Flexible (movable): a rich fill in the category colour with bright text.
+ * Fixed: thick border, nearly empty fill. The difference should read at a glance.
+ */
+.event {
+  height: 100%;
+  width: 100%;
+  padding: 3px 6px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in oklab, var(--cat) 56%, var(--bg-0));
+  border: 1px solid color-mix(in oklab, var(--cat) 80%, var(--bg-0));
+  color: color-mix(in oklab, var(--cat) 18%, white);
+  overflow: hidden;
+  font-size: var(--text-md);
+  line-height: 1.3;
+}
+
+.event[data-kind='fixed'] {
+  background: color-mix(in oklab, var(--cat) 16%, var(--bg-0));
+  border: 2px solid color-mix(in oklab, var(--cat) 82%, var(--bg-0));
+  padding: 2px 5px;
+}
+
+/* Needs attention (e.g. placed outside availability): red outline, red only for this. */
+.event[data-attention] {
+  border-color: var(--danger);
+  box-shadow: inset 3px 0 0 var(--danger);
+}
+
+/* Done and skipped blocks fade back; partial stays visible (it still needs rescheduling). */
+.event[data-outcome='done'],
+.event[data-outcome='skipped'] {
+  opacity: 0.55;
+}
+
+.event[data-outcome='skipped'] .evTitle {
+  text-decoration: line-through;
+}
+
+.event[data-short] {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.event[data-month] {
+  padding: 1px 5px;
+  border-width: 1px;
+}
+
+.evRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.evIcon {
+  flex: none;
+}
+
+.evTitle {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: var(--weight-strong);
+}
+
+.evMeta {
+  flex: none;
+  opacity: 0.85;
+}
+
+/* In the time grid, blocks size their text to their own height (container queries). */
+.event:not([data-month]) {
+  container-type: size;
+  container-name: block;
+}
+
+/* A tall block has room for a long module name on two lines. */
+.event:not([data-short]) .evRow {
+  align-items: flex-start;
+}
+
+.event:not([data-short]) .evIcon,
+.event:not([data-short]) .todoCheck {
+  margin-top: 2px;
+}
+
+.event:not([data-short]) .evTitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+  hyphens: auto;
+}
+
+/* A narrow column: one line with an ellipsis, rather than a name broken mid-word. */
+@container block (max-width: 100px) {
+  .event:not([data-short]) .evTitle {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+/* Under ~1h20 there's room for one line of name, the lecture and the time. */
+@container block (max-height: 84px) {
+  .event:not([data-short]) .evTitle {
+    -webkit-line-clamp: 1;
+  }
+}
+
+/* Under ~50 min: drop the time rather than cut it in half. */
+@container block (max-height: 50px) {
+  .event .evTime {
+    display: none;
+  }
+}
+
+.evDetail {
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: var(--weight-regular);
+  opacity: 0.9;
+}
+
+.evDetailInline {
+  font-weight: var(--weight-regular);
+  opacity: 0.85;
+}
+
+.evTime {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--text-xs);
+  color: inherit;
+  opacity: 0.75;
+}
+
+.event[data-kind='fixed'] {
+  color: var(--cat-text);
+}
+
+.event[data-short] .evTime {
+  display: none;
+}
+
+/* Deadlines in the all-day strip */
+.deadline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--cat-fill);
+  border: 1px solid var(--cat-border);
+  color: var(--cat-text);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-strong);
+}
+
+/* A term starting or ending: quieter than a deadline. */
+.term {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 1px 6px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text-2);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-strong);
+}
+
+.error {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in oklab, var(--danger) 50%, var(--bg-0));
+  background: color-mix(in oklab, var(--danger) 15%, var(--bg-1));
+  color: var(--text-1);
+  font-size: var(--text-sm);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.4);
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+}
+
+.toolbarTitle {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-strong);
+  margin-left: var(--space-2);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.iconButton,
+.textButton {
+  display: grid;
+  place-items: center;
+  height: 28px;
+  border-radius: var(--radius-md);
+  color: var(--text-2);
+}
+
+.iconButton {
+  width: 28px;
+}
+
+.textButton {
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border-strong);
+}
+
+.iconButton:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.iconButton:hover:not(:disabled),
+.textButton:hover {
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.segmented button {
+  height: 26px;
+  padding: 0 var(--space-3);
+  color: var(--text-2);
+}
+
+.segmented button[aria-pressed='true'] {
+  background: var(--bg-3);
+  color: var(--text-1);
+}
+
+/* Outside availability rules (automatic placement won't use it; you can still drag there). */
+.unavailable {
+  background: repeating-linear-gradient(
+    135deg,
+    rgb(255 255 255 / 0.028) 0 5px,
+    transparent 5px 10px
+  ) !important;
+}
+
+/* Preview of something being dragged in from outside */
+.preview {
+  border: 1px dashed var(--accent);
+  background: var(--accent-soft);
+  color: var(--text-1);
+}
+
+/* Assistant changes waiting for review: the new place glows, the old place is a ghost. */
+.event[data-review] {
+  box-shadow:
+    0 0 0 1.5px var(--accent),
+    0 0 12px rgb(91 140 255 / 0.45);
+}
+
+.ghost {
+  background: transparent;
+  border: 1.5px dashed var(--cat-border);
+  color: var(--text-3);
+  opacity: 0.8;
+}
+
+.ghost .evTitle {
+  text-decoration: line-through;
+}
+
+/*
+ * An event of a linked calendar (iCloud…): outlined and quiet, so it reads as "for reference".
+ * Nothing is planned around it.
+ */
+.linked {
+  background: color-mix(in oklab, var(--cat) 9%, transparent);
+  border: 1.5px dashed color-mix(in oklab, var(--cat) 65%, var(--bg-0));
+  color: color-mix(in oklab, var(--cat) 35%, white);
+  cursor: default;
+}
+
+/* A todo's tick-off dot inside its calendar block (bigger hit area than the icon). */
+.todoCheck {
+  display: grid;
+  place-items: center;
+  flex: none;
+  margin: -3px -2px -3px -3px;
+  padding: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.todoCheck:hover {
+  background: color-mix(in oklab, var(--cat) 30%, transparent);
+  color: var(--text-1);
+}
+
+.newEvent {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: white;
+  font-size: var(--text-sm);
+  white-space: nowrap;
+}
+
+.newEvent:hover {
+  background: color-mix(in oklab, var(--accent) 88%, white);
+}
+
+/* Just moved here (Move to next week): a pulse so it's easy to find. */
+.event[data-selected] {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+/* A tick in the corner of each selected block. */
+.event[data-selected]::after {
+  content: '✓';
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  display: grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 9px;
+  font-weight: var(--weight-strong);
+}
+
+.event[data-focus] {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  animation: focusPulse 1.2s var(--ease) 3;
+}
+
+@keyframes focusPulse {
+  50% {
+    outline-color: transparent;
+  }
+}
+
+.event:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Holding a dragged block at the side: the calendar turns to the previous or next week. */
+.edgeHint {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  color: var(--accent);
+  pointer-events: none;
+  animation: edgePulse 700ms var(--ease) infinite alternate;
+}
+
+.edgeHint[data-side='left'] {
+  left: 0;
+  background: linear-gradient(to right, var(--accent-soft), transparent);
+}
+
+.edgeHint[data-side='right'] {
+  right: 0;
+  background: linear-gradient(to left, var(--accent-soft), transparent);
+}
+
+@keyframes edgePulse {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}

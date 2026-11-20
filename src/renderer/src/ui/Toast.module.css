@@ -1,0 +1,65 @@
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  z-index: 210;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 8px 8px 8px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+  box-shadow: 0 12px 36px rgb(0 0 0 / 0.55);
+  font-size: var(--text-md);
+  animation: rise 160ms var(--ease);
+}
+
+.toast[data-tone='error'] {
+  border-color: color-mix(in oklab, var(--danger) 60%, var(--bg-2));
+}
+
+.toast[data-tone='error'] .text {
+  color: var(--danger);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.action {
+  flex: none;
+  padding: 3px 10px;
+  border-radius: var(--radius-md);
+  color: var(--accent);
+  font-weight: var(--weight-strong);
+}
+
+.action:hover {
+  background: var(--accent-soft);
+}
+
+.close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+}
+
+.close:hover {
+  background: var(--bg-3);
+  color: var(--text-1);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+}

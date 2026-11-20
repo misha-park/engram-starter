@@ -1,0 +1,47 @@
+# Build the Mac app with `npm run package` (dist/mac-arm64/Engram.app).
+# `npm run release` also tests it and hands it to the installed app (docs/ORIGINAL-SPEC.md §9).
+appId: local.engram.app
+productName: Engram
+directories:
+  buildResources: build
+files:
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!{docs,site,build}/*'
+  - '!scripts/*'
+  - '!drizzle/*'
+  - '!electron.vite.config.{js,ts,mjs,cjs}'
+  - '!{vitest.config.mts,vitest.eval.config.mts,drizzle.config.ts}'
+  - '!*.tsbuildinfo'
+  - '!{.eslintcache,eslint.config.mjs,.prettierignore,.prettierrc.yaml,CHANGELOG.md,README.md,docs/ORIGINAL-SPEC.md,CLAUDE.md}'
+  - '!{.env,.env.*,.npmrc}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+extraResources:
+  - from: drizzle
+    to: drizzle
+  # Written by scripts/build-info.ts: version, commit and build time (Settings → Updates).
+  - from: out/build.json
+    to: build.json
+# Kept outside app.asar: the tray icons and demo fixtures (read by path), and the Agent SDK's
+# native `claude` binary (a binary can't run from inside the archive). index.ts reads both
+# from app.asar.unpacked.
+asarUnpack:
+  - resources/**
+  - node_modules/@anthropic-ai/claude-agent-sdk-darwin-*/**
+mac:
+  target: dir
+  # Signing: with no `identity` set, electron-builder signs the app "ad hoc" on Apple Silicon (fine
+  # for an app built and used on the same Mac). The only side effect: macOS may ask once after each
+  # update to let Engram use its saved secrets ("Engram Safe Storage"), because each build looks
+  # like a new app. To stop that, sign every build with the same certificate: make a free "Apple
+  # Development" certificate in Xcode (Settings -> Accounts), then add these two lines back:
+  #   identity: Apple Development
+  #   sign: scripts/sign-mac.cjs   (our own faster signing step; it needs the identity above)
+  icon: build/icon.icns
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  notarize: false
+npmRebuild: false
+# Build from the Electron already in node_modules (the same version `npm run dev` runs) instead of
+# downloading and unzipping it again on every build.
+electronDist: node_modules/electron/dist

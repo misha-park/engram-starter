@@ -1,0 +1,71 @@
+/* Design tokens. Dark only. Colour means category; blue = today/selection/focus; red = overdue. */
+:root {
+  color-scheme: dark;
+
+  /* Neutrals (near-black, slightly cool) */
+  --bg-0: #0a0a0b; /* window */
+  --bg-1: #111113; /* panels, sidebar */
+  --bg-2: #18181b; /* hover, inputs */
+  --bg-3: #212125; /* pressed, selected */
+  --border: #222226; /* hairlines */
+  --border-strong: #2f2f35;
+
+  --text-1: #e8e8eb;
+  --text-2: #a1a1aa;
+  --text-3: #6c6c75;
+
+  --accent: #5b8cff;
+  --accent-soft: rgb(91 140 255 / 0.14);
+  --danger: #f06a63;
+  /* Review ratings (spaced repetition): the confidence heatmap and history pips. */
+  --rating-easy: #4fb56f;
+  --rating-ok: #d9a33f;
+  --rating-hard: #e5534b;
+  --danger-soft: rgb(240 106 99 / 0.14);
+
+  /* Category colour default; see .cat below */
+  --cat: var(--text-3);
+
+  /* Type: SF Pro via the system stack, two weights */
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+  --weight-regular: 400;
+  --weight-strong: 590;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-md: 13px;
+  --text-lg: 15px;
+  --text-xl: 20px;
+
+  /* Spacing (4px grid), radii, sizes */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --topbar-h: 44px;
+  --rail-w: 52px;
+  --sidebar-w: 248px;
+  --claude-w: 380px;
+
+  /* Lucide's chevron-right, for disclosure arrows drawn with mask-image. */
+  --chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-panel: 180ms;
+}
+
+/*
+ * Category colouring: an element sets `--cat` (inline style) and the `cat` class; the derived
+ * shades are computed on that element. (Defining them on :root would freeze them to the default.)
+ */
+.cat {
+  --cat-fill: color-mix(in oklab, var(--cat) 32%, var(--bg-0));
+  --cat-border: color-mix(in oklab, var(--cat) 66%, var(--bg-0));
+  --cat-text: color-mix(in oklab, var(--cat) 70%, white);
+}

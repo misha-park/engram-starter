@@ -1,0 +1,1 @@
+ALTER TABLE `lectures` ADD `continues_id` text REFERENCES lectures(id) ON DELETE set null;

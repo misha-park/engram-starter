@@ -1,0 +1,1 @@
+ALTER TABLE `lectures` ADD `missed` integer DEFAULT false NOT NULL;

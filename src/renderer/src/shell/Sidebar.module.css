@@ -1,0 +1,544 @@
+.sidebar {
+  width: var(--sidebar-w);
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-3);
+  border-right: 1px solid var(--border);
+  background: var(--bg-1);
+  overflow-y: auto;
+}
+
+/* Mini month */
+.monthHeader {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 0 var(--space-2) var(--space-1);
+}
+
+.monthTitle {
+  flex: 1;
+  font-weight: var(--weight-strong);
+}
+
+.monthNav {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+}
+
+.monthNav:hover {
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.monthGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 2px;
+  font-size: var(--text-xs);
+}
+
+/* The weeks scroll inside a fixed window (the weekday letters stay put). */
+.weeksWindow {
+  overflow: hidden;
+}
+
+.weeksTrack {
+  will-change: transform;
+}
+
+.weekday {
+  text-align: center;
+  color: var(--text-3);
+  padding-bottom: 2px;
+}
+
+.week {
+  display: contents;
+}
+
+.date {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 26px;
+  color: var(--text-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+}
+
+.date:hover {
+  color: var(--text-1);
+  outline: 1px solid var(--border-strong);
+  outline-offset: -1px;
+}
+
+/* Deadline marker */
+.dot {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--danger);
+}
+
+/* Faint band across the current week */
+.week[data-current] .date {
+  background: var(--bg-2);
+  border-radius: 0;
+}
+.week[data-current] .date:first-child {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+.week[data-current] .date:last-child {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.date[data-past] {
+  color: var(--text-3);
+  opacity: 0.6;
+}
+
+/* The 1st of a month shows the month's name instead of "1". */
+.date[data-month-start] {
+  color: var(--text-1);
+  font-weight: var(--weight-strong);
+}
+
+.date[data-today] {
+  color: var(--accent);
+  font-weight: var(--weight-strong);
+}
+
+/* Sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sectionHeader,
+.sectionHeaderStatic {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
+  text-align: left;
+  border-radius: var(--radius-sm);
+}
+
+.sectionHeader:hover {
+  color: var(--text-1);
+}
+
+.count {
+  color: var(--text-3);
+  font-weight: var(--weight-regular);
+  margin-left: var(--space-1);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemLabel {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Category toggle: a coloured square checkbox */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px var(--space-1);
+  border-radius: var(--radius-sm);
+  color: var(--text-2);
+}
+
+.toggle:hover {
+  background: var(--bg-2);
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.check {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1.5px solid var(--cat);
+  flex: none;
+}
+
+.toggle input:checked + .check {
+  background: var(--cat);
+}
+
+.toggle input:focus-visible + .check {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* Todos */
+.todo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px var(--space-1);
+  border-radius: var(--radius-sm);
+}
+
+/* Archive: an × that fades in on the right after hovering a moment (over the due date). */
+.todoArchive {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+  box-shadow: -8px 0 8px var(--bg-2);
+  color: var(--text-3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: opacity 120ms var(--ease);
+}
+
+.todo:hover .todoArchive,
+.todoArchive:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 600ms;
+}
+
+.todoArchive:hover {
+  background: var(--bg-3);
+  color: var(--text-1);
+}
+
+.todo:hover {
+  background: var(--bg-2);
+}
+
+.todo[data-done] {
+  color: var(--text-3);
+}
+
+.todo[data-done] .itemLabel {
+  text-decoration: line-through;
+}
+
+.todoIcon {
+  flex: none;
+  color: var(--text-3);
+}
+
+.meta {
+  flex: none;
+  color: var(--text-3);
+}
+
+.due {
+  flex: none;
+  font-size: var(--text-xs);
+  color: var(--text-3);
+}
+
+.due[data-overdue] {
+  color: var(--danger);
+}
+
+/* Todos */
+.todoCheck {
+  display: grid;
+  place-items: center;
+  flex: none;
+  color: var(--text-3);
+}
+
+.todoCheck:hover {
+  color: var(--text-1);
+}
+
+.todoTitle {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.todo[data-done] .todoTitle {
+  text-decoration: line-through;
+}
+
+.todo[data-editing] {
+  background: var(--bg-2);
+}
+
+.addTodo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px var(--space-1);
+}
+
+.addTodo input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-1);
+  font: inherit;
+  outline: none;
+  user-select: text;
+}
+
+.addTodo input::placeholder {
+  color: var(--text-3);
+}
+
+.todoEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 2px 0 var(--space-2);
+  padding: var(--space-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--bg-0);
+  font-size: var(--text-sm);
+}
+
+.editorTitle {
+  padding: 4px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+  color: var(--text-1);
+  font: inherit;
+  user-select: text;
+}
+
+.editorRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.editorLabel {
+  width: 44px;
+  flex: none;
+  color: var(--text-3);
+}
+
+.editorSelect,
+.editorMinutes {
+  height: 26px;
+  padding: 0 4px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+  color: var(--text-1);
+  font: inherit;
+  color-scheme: dark;
+}
+
+.editorMinutes {
+  width: 52px;
+}
+
+/* Keep the date field inside the narrow editor. */
+.todoEditor :global(button[aria-label='Due date']) {
+  min-width: 0;
+}
+
+.weekdayToggles {
+  display: flex;
+  gap: 2px;
+  padding-left: 50px;
+}
+
+.weekdayToggles button {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+  font-size: var(--text-xs);
+}
+
+.weekdayToggles button[aria-pressed='true'] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.textMini {
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text-2);
+  font-size: var(--text-xs);
+}
+
+.textMini:hover:not(:disabled) {
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.iconMini {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+}
+
+.iconMini:hover {
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.withIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.grow {
+  flex: 1;
+}
+
+.error {
+  color: var(--danger);
+  font-size: var(--text-xs);
+}
+
+.quickDue {
+  margin: 2px 0 0 26px;
+  color: var(--accent);
+  font-size: var(--text-xs);
+}
+
+/* Deadlines: days to go for each assignment and the dissertation's next milestone. */
+.deadline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: 4px var(--space-1);
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+.deadline:hover {
+  background: var(--bg-2);
+}
+
+.deadlineDot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin: 0 3px;
+  border-radius: 50%;
+  background: var(--cat);
+}
+
+.deadlineIcon {
+  flex: none;
+  color: var(--text-3);
+}
+
+.deadlineTitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deadlineKind {
+  color: var(--text-3);
+}
+
+.daysLeft {
+  flex: none;
+  color: var(--text-3);
+  font-size: var(--text-xs);
+}
+
+.daysLeft[data-soon] {
+  color: var(--danger);
+}
+
+.daysLeft[data-late] {
+  color: var(--danger);
+  font-weight: var(--weight-strong);
+}
+
+/* What's due on a mini-month day, shown on hover (in a portal: the weeks track is transformed). */
+.dayTip {
+  position: fixed;
+  z-index: 1000;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 280px;
+  padding: 6px 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 40%);
+  font-size: var(--text-sm);
+  pointer-events: none;
+}
+
+.dayTipRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.dayTipTitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-1);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dayTipWhen {
+  flex: none;
+  color: var(--text-3);
+}

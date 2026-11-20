@@ -1,0 +1,17 @@
+PHAR0099 Molecular Pharmacology: teaching schedule (demo, fake)
+
+Week  Day        Time           Lecture
+1     Wednesday  10:00 - 12:00  Drug targets: an overview
+1     Friday     10:00 - 11:00  Dose-response relationships
+2     Wednesday  10:00 - 11:00  Receptor theory I
+2     Wednesday  11:00 - 12:00  Receptor theory II
+2     Friday     10:00 - 11:00  Ion channels as drug targets
+3     Wednesday  10:00 - 12:00  Receptor theory: occupancy and efficacy
+3     Friday     10:00 - 11:00  Enzyme inhibitors
+4     Wednesday  10:00 - 11:00  G protein-coupled receptors
+4     Wednesday  11:00 - 12:00  Second messengers
+4     Friday     10:00 - 11:00  Transporters
+5     Wednesday  10:00 - 12:00  Pharmacokinetics
+5     Friday     10:00 - 11:00  Drug metabolism
+6     Wednesday  10:00 - 12:00  Toxicology
+6     Friday     10:00 - 11:00  Revision

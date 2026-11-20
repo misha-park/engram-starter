@@ -1,0 +1,94 @@
+.kinds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.kind {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  color: var(--text-2);
+  text-align: left;
+}
+
+.kind strong {
+  color: var(--text-1);
+  font-weight: var(--weight-strong);
+}
+
+.kind span {
+  color: var(--text-3);
+  font-size: var(--text-xs);
+  line-height: 1.35;
+}
+
+.kind:hover {
+  background: var(--bg-2);
+}
+
+.kind[aria-checked='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.delete {
+  color: var(--danger);
+}
+
+.delete:hover:not(:disabled) {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+.linkButton {
+  height: 30px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-md);
+  color: var(--accent);
+  font-size: var(--text-sm);
+}
+
+.linkButton:hover {
+  background: var(--accent-soft);
+}
+
+.days {
+  display: flex;
+  gap: 4px;
+}
+
+.day {
+  flex: 1;
+  height: 28px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.day:hover {
+  background: var(--bg-2);
+}
+
+.day[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text-1);
+}
+
+/* For: the full width of the dialog, never wider (assignment names can be long). */
+.forField {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+
+.forField select {
+  width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
+}

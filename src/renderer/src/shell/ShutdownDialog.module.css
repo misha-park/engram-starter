@@ -1,0 +1,86 @@
+.dialog {
+  width: 520px;
+}
+
+.moon {
+  vertical-align: -2px;
+  margin-right: 4px;
+  color: var(--accent);
+}
+
+.heading {
+  margin: 0 0 6px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
+  color: var(--text-2);
+}
+
+.muted {
+  color: var(--text-3);
+  font-weight: var(--weight-regular);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 3px 0;
+}
+
+.check {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--accent);
+}
+
+.doneIcon {
+  color: var(--rating-easy);
+  flex: none;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cat);
+  flex: none;
+}
+
+.itemTitle {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.time {
+  color: var(--text-3);
+  font-size: var(--text-sm);
+}
+
+.divider {
+  margin-top: 6px;
+  color: var(--text-3);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.result {
+  margin: var(--space-2) 0 0;
+  color: var(--text-2);
+}
+
+.tomorrow p {
+  margin: 0;
+}

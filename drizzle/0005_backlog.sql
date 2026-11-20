@@ -1,0 +1,1 @@
+ALTER TABLE `blocks` ADD `backlog_resolved_at` text;

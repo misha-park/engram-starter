@@ -1,0 +1,1 @@
+ALTER TABLE `lectures` ADD `notes_at` text;

@@ -1,0 +1,244 @@
+.page {
+  height: 100%;
+  overflow: auto;
+  padding: var(--space-5) var(--space-6);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.title {
+  font-size: var(--text-xl);
+}
+
+.subtitle,
+.muted {
+  color: var(--text-3);
+}
+
+.muted[data-overdue] {
+  color: var(--danger);
+}
+
+.badge {
+  padding: 1px 7px;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  color: var(--text-2);
+  font-size: var(--text-xs);
+}
+
+.error {
+  color: var(--danger);
+  margin-bottom: var(--space-3);
+}
+
+.section {
+  max-width: 760px;
+  margin-bottom: var(--space-6);
+}
+
+.sectionTitle {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  font-weight: var(--weight-strong);
+  margin-bottom: var(--space-2);
+}
+
+.count {
+  color: var(--text-3);
+  font-weight: var(--weight-regular);
+}
+
+.card,
+.moduleCard {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-1);
+}
+
+.moduleCard + .moduleCard {
+  margin-top: var(--space-3);
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  color: var(--text-3);
+}
+
+.row,
+.weekRow,
+.lectureRow,
+.moduleHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px var(--space-4);
+}
+
+.row + .row,
+.lectureRow,
+.dayGroup + .dayGroup {
+  border-top: 1px solid var(--border);
+}
+
+.weekRow {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.dayLabel {
+  padding: 8px var(--space-4) 2px;
+  color: var(--text-3);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.time {
+  width: 42px;
+  color: var(--text-2);
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--cat);
+}
+
+.attention {
+  color: var(--danger);
+  font-size: var(--text-xs);
+}
+
+.button,
+.primary,
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 26px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+}
+
+.button {
+  border: 1px solid var(--border-strong);
+  color: var(--text-2);
+}
+
+.button:hover {
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.primary {
+  background: var(--accent);
+  color: white;
+}
+
+.link {
+  height: 22px;
+  padding: 0 6px;
+  color: var(--text-3);
+}
+
+.link:hover {
+  color: var(--text-1);
+  background: var(--bg-2);
+}
+
+.lectureNo {
+  width: 90px;
+  color: var(--cat-text);
+  font-weight: var(--weight-strong);
+}
+
+.history {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+/* One pip per review: filled by rating once done, an outline while open. */
+.pip {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg-3);
+}
+
+.pip[data-rating='easy'] {
+  background: var(--rating-easy);
+}
+
+.pip[data-rating='ok'] {
+  background: var(--rating-ok);
+}
+
+.pip[data-rating='hard'] {
+  background: var(--rating-hard);
+}
+
+.pip[data-open] {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--border-strong);
+}
+
+/* Review session dialog */
+.steps {
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-3) var(--space-4) 0;
+  list-style: none;
+  color: var(--text-3);
+  font-size: var(--text-sm);
+}
+
+.steps li[aria-current='step'] {
+  color: var(--text-1);
+  font-weight: var(--weight-strong);
+}
+
+.steps li[data-done] {
+  color: var(--text-2);
+}
+
+.inlineIcon {
+  vertical-align: -2px;
+  color: var(--accent);
+}
+
+.minutes {
+  width: 80px;
+  height: 30px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+  color: var(--text-1);
+  font: inherit;
+}

@@ -1,0 +1,209 @@
+.rail {
+  grid-area: rail;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--space-2) 0 var(--space-3);
+  border-right: 1px solid var(--border);
+  background: var(--bg-0);
+}
+
+.item {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  color: var(--text-3);
+  -webkit-user-drag: none;
+}
+
+.item:hover {
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.active,
+.active:hover {
+  background: var(--bg-3);
+  color: var(--text-1);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.popoverAnchor {
+  position: relative;
+}
+
+.popover {
+  position: absolute;
+  left: calc(100% + 10px);
+  bottom: 0;
+  width: 280px;
+  padding: var(--space-3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--bg-1);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.5);
+  z-index: 10;
+}
+
+.popoverTitle {
+  font-weight: var(--weight-strong);
+  margin-bottom: var(--space-2);
+}
+
+.popoverEmpty {
+  color: var(--text-3);
+}
+
+.item {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border-radius: 8px;
+  background: var(--bg-3);
+  border: 1px solid var(--border-strong);
+  color: var(--text-1);
+  font-size: 9px;
+  line-height: 13px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.notes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.note {
+  display: flex;
+  gap: var(--space-2);
+  width: 100%;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  text-align: left;
+}
+
+.note:hover {
+  background: var(--bg-2);
+}
+
+.noteIcon {
+  flex: none;
+  margin-top: 2px;
+  color: var(--text-3);
+}
+
+.note[data-kind='overdue-todo'] .noteIcon {
+  color: var(--danger);
+}
+
+.noteText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.noteTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hovered (or focused), a notification shows its whole title. */
+.note:hover .noteTitle,
+.note:focus-visible .noteTitle {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Room for the dismiss button. */
+.note[data-kind^='moodle'] {
+  padding-right: 28px;
+}
+
+.noteDetail {
+  font-size: var(--text-xs);
+  color: var(--text-3);
+}
+
+/* The exam-season reminder: large, and gently pulsing so it's hard to miss. */
+.examButton {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--space-2);
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), #a06bff);
+  color: white;
+  animation: examPulse 2.4s var(--ease) infinite;
+}
+
+.examButton:hover {
+  filter: brightness(1.1);
+}
+
+@keyframes examPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(91 140 255 / 0.55);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgb(91 140 255 / 0);
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .examButton {
+    animation: none;
+  }
+}
+
+.notes li {
+  position: relative;
+}
+
+.noteDismiss {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+  opacity: 0;
+}
+
+.notes li:hover .noteDismiss,
+.noteDismiss:focus-visible {
+  opacity: 1;
+}
+
+.noteDismiss:hover {
+  background: var(--bg-3);
+  color: var(--text-1);
+}
+
+.note[data-kind='moodle-brief'] .noteIcon,
+.note[data-kind='moodle-forum'] .noteIcon {
+  color: var(--accent);
+}

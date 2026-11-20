@@ -1,0 +1,33 @@
+/*
+ * FullCalendar v7 "forma" theme, recoloured with the app's tokens. The theme reads these
+ * variables; we define them on the wrapper so they apply to this calendar only.
+ */
+.planner-calendar {
+  --fc-forma-primary: var(--accent);
+  --fc-forma-primary-over: color-mix(in oklab, var(--accent) 85%, white);
+  --fc-forma-primary-down: color-mix(in oklab, var(--accent) 70%, white);
+  --fc-forma-primary-foreground: #ffffff;
+
+  --fc-forma-event: var(--bg-3);
+  --fc-forma-event-contrast: var(--text-1);
+  --fc-forma-background-event: var(--bg-2);
+  --fc-forma-highlight: var(--accent-soft);
+
+  --fc-forma-background: var(--bg-0);
+  --fc-forma-faint: rgb(255 255 255 / 0.025);
+  --fc-forma-muted: rgb(255 255 255 / 0.045);
+  --fc-forma-strong: rgb(255 255 255 / 0.08);
+  --fc-forma-stronger: rgb(255 255 255 / 0.12);
+  --fc-forma-strongest: rgb(255 255 255 / 0.16);
+
+  --fc-forma-foreground: var(--text-1);
+  --fc-forma-faint-foreground: var(--text-3);
+  --fc-forma-muted-foreground: var(--text-2);
+
+  --fc-forma-border: var(--border);
+  --fc-forma-muted-border: var(--border);
+  --fc-forma-strong-border: var(--border-strong);
+
+  height: 100%;
+  font-size: var(--text-sm);
+}

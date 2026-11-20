@@ -1,0 +1,1 @@
+ALTER TABLE `moodle_items` ADD `summary_tried` integer DEFAULT false NOT NULL;

@@ -1,0 +1,1 @@
+ALTER TABLE `timetable_events` ADD `hidden` integer DEFAULT false NOT NULL;

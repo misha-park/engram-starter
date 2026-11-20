@@ -1,0 +1,316 @@
+{
+  "courses": [
+    {
+      "id": 9001,
+      "shortname": "NEUR0099_{year}",
+      "fullname": "NEUR0099: Cellular Neurophysiology {year}",
+      "sections": [
+        {
+          "name": "Module overview",
+          "modules": [
+            {
+              "id": 5101,
+              "instance": 1,
+              "modname": "resource",
+              "name": "Module handbook",
+              "files": ["NEUR module handbook.pdf"]
+            },
+            {
+              "id": 5102,
+              "instance": 2,
+              "modname": "lti",
+              "name": "Lecture recordings"
+            }
+          ]
+        },
+        {
+          "name": "Ion channels",
+          "weekOffset": -1,
+          "modules": [
+            {
+              "id": 5111,
+              "instance": 3,
+              "modname": "resource",
+              "name": "Ion channels lecture slides",
+              "files": ["Ion channels slides.pdf"]
+            }
+          ]
+        },
+        {
+          "name": "Synaptic transmission",
+          "weekOffset": 0,
+          "modules": [
+            {
+              "id": 5121,
+              "instance": 4,
+              "modname": "resource",
+              "name": "Synaptic transmission slides",
+              "files": ["Synaptic transmission slides.pdf"]
+            },
+            {
+              "id": 5122,
+              "instance": 5,
+              "modname": "resource",
+              "name": "Workshop handout",
+              "files": ["Synapse workshop handout.pdf"]
+            }
+          ]
+        },
+        {
+          "name": "Assessment and feedback",
+          "modules": [
+            {
+              "id": 5131,
+              "instance": 701,
+              "modname": "assign",
+              "name": "Ion channels essay (Level 6 Students)",
+              "description": "<p>Write an essay of up to <strong>2,500 words</strong> on how the structure of one voltage-gated ion channel explains its function.</p><ul><li>Use at least six primary papers</li><li>Submit as a PDF</li></ul><p>This is demo text (fake).</p>",
+              "briefFiles": ["NEUR essay marking criteria.pdf"]
+            }
+          ]
+        }
+      ],
+      "contacts": [7001],
+      "roles": {
+        "7001": ["editingteacher"]
+      },
+      "forums": [
+        {
+          "id": 9101,
+          "type": "news",
+          "name": "Module announcements",
+          "discussions": [
+            {
+              "id": 9201,
+              "name": "Welcome to NEUR0099",
+              "posts": [
+                {
+                  "id": 9301,
+                  "author": 7001,
+                  "authorName": "Dr Ada Demo",
+                  "subject": "Welcome to NEUR0099",
+                  "message": "<p>Welcome, everyone. The handbook and the first week's slides are on the module page.</p><p>(Demo text, fake.)</p>",
+                  "hoursAgo": 200
+                }
+              ]
+            },
+            {
+              "id": 9202,
+              "name": "Thursday's lecture is cancelled",
+              "posts": [
+                {
+                  "id": 9302,
+                  "author": 7001,
+                  "authorName": "Dr Ada Demo",
+                  "subject": "Thursday's lecture is cancelled",
+                  "message": "<p>Dear all, I'm unwell, so this Thursday's lecture is cancelled. The recording from last year will be posted instead, and we'll cover the material in the workshop.</p><p>(Demo text, fake.)</p>",
+                  "hoursAgo": 20
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 9102,
+          "type": "general",
+          "name": "Module discussions for students",
+          "discussions": [
+            {
+              "id": 9203,
+              "name": "Nernst equation question",
+              "posts": [
+                {
+                  "id": 9311,
+                  "author": 7101,
+                  "authorName": "Sam Student",
+                  "subject": "Nernst equation question",
+                  "message": "<p>Why does the potassium equilibrium potential get less negative when extracellular K+ goes up?</p>",
+                  "hoursAgo": 30
+                },
+                {
+                  "id": 9312,
+                  "parent": 9311,
+                  "author": 7001,
+                  "authorName": "Dr Ada Demo",
+                  "subject": "Re: Nernst equation question",
+                  "message": "<p>Hi Sam, good question. With more K+ outside, the concentration gradient driving K+ out is smaller, so less charge separation is needed to balance it. Best, Ada</p><p>(Demo text, fake.)</p>",
+                  "hoursAgo": 27
+                },
+                {
+                  "id": 9313,
+                  "parent": 9312,
+                  "author": 7101,
+                  "authorName": "Sam Student",
+                  "subject": "Re: Nernst equation question",
+                  "message": "<p>That makes sense, thank you!</p>",
+                  "hoursAgo": 26
+                }
+              ]
+            },
+            {
+              "id": 9204,
+              "name": "Is Thursday's lecture cancelled?",
+              "posts": [
+                {
+                  "id": 9314,
+                  "author": 7102,
+                  "authorName": "Robin Student",
+                  "subject": "Is Thursday's lecture cancelled?",
+                  "message": "<p>Has anyone heard whether the lecture on Thursday is cancelled? Which room is the workshop in?</p>",
+                  "hoursAgo": 18
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9002,
+      "shortname": "PHAR0099_{year}",
+      "fullname": "PHAR0099: Molecular Pharmacology {year}",
+      "sections": [
+        {
+          "name": "Module overview",
+          "modules": [
+            {
+              "id": 5201,
+              "instance": 9,
+              "modname": "resource",
+              "name": "PHAR0099 Teaching Schedule",
+              "files": ["PHAR0099 Teaching schedule.txt"]
+            }
+          ]
+        },
+        {
+          "name": "Receptor theory",
+          "weekOffset": -1,
+          "modules": [
+            {
+              "id": 5211,
+              "instance": 6,
+              "modname": "resource",
+              "name": "Receptor theory slides",
+              "files": ["Receptor theory slides.pdf"]
+            }
+          ]
+        },
+        {
+          "name": "G protein-coupled receptors",
+          "weekOffset": 0,
+          "modules": [
+            {
+              "id": 5221,
+              "instance": 7,
+              "modname": "resource",
+              "name": "Slides for the GPCR lecture (Wednesday, first hour)",
+              "files": ["GPCR signalling slides.pdf"]
+            },
+            {
+              "id": 5222,
+              "instance": 8,
+              "modname": "url",
+              "name": "Interactive demo"
+            }
+          ]
+        },
+        {
+          "name": "Assessment and feedback",
+          "modules": [
+            {
+              "id": 5231,
+              "instance": 702,
+              "modname": "assign",
+              "name": "Receptor binding problem sheet",
+              "description": "<p>Answer all five questions on receptor occupancy and Schild analysis. Show your working.</p><p>This is demo text (fake).</p>"
+            }
+          ]
+        }
+      ],
+      "contacts": [7002],
+      "roles": {
+        "7002": ["uclleader"],
+        "7003": ["teacher"]
+      },
+      "forums": [
+        {
+          "id": 9111,
+          "type": "news",
+          "name": "Announcements",
+          "discussions": [
+            {
+              "id": 9211,
+              "name": "Welcome to Molecular Pharmacology",
+              "posts": [
+                {
+                  "id": 9321,
+                  "author": 7002,
+                  "authorName": "Prof Ben Demo",
+                  "subject": "Welcome to Molecular Pharmacology",
+                  "message": "<p>Welcome! The teaching schedule is in the Module overview section.</p><p>(Demo text, fake.)</p>",
+                  "hoursAgo": 220
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 9112,
+          "type": "general",
+          "name": "Module discussions for students",
+          "discussions": [
+            {
+              "id": 9212,
+              "name": "Problem sheet question 3",
+              "posts": [
+                {
+                  "id": 9331,
+                  "author": 7103,
+                  "authorName": "Alex Student",
+                  "subject": "Problem sheet question 3",
+                  "message": "<p>In question 3, should we assume the antagonist is competitive?</p>",
+                  "hoursAgo": 50
+                },
+                {
+                  "id": 9332,
+                  "parent": 9331,
+                  "author": 7003,
+                  "authorName": "Dr Cam Tutor",
+                  "subject": "Re: Problem sheet question 3",
+                  "message": "<p>Yes, assume it's competitive and reversible, as in the lecture.</p><p>(Demo text, fake.)</p>",
+                  "hoursAgo": 47
+                }
+              ]
+            },
+            {
+              "id": 9213,
+              "name": "Problem sheet deadline extended",
+              "posts": [
+                {
+                  "id": 9333,
+                  "author": 7003,
+                  "authorName": "Dr Cam Tutor",
+                  "subject": "Problem sheet deadline extended",
+                  "message": "<p>Hi all, because of the strike days, the deadline for the receptor binding problem sheet is extended by one week. The new due date is shown on the assignment page.</p><p>(Demo text, fake.)</p>",
+                  "hoursAgo": 10
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9003,
+      "shortname": "ACC Life Sciences_{year}",
+      "fullname": "ACC Life Sciences {year}",
+      "sections": []
+    },
+    {
+      "id": 8001,
+      "shortname": "NEUR0099_{lastYear}",
+      "fullname": "NEUR0099: Cellular Neurophysiology {lastYear}",
+      "sections": []
+    }
+  ]
+}

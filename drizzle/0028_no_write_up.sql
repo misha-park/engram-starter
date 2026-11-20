@@ -1,0 +1,1 @@
+ALTER TABLE `lectures` ADD `no_write_up` integer DEFAULT false NOT NULL;

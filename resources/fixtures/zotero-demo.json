@@ -1,0 +1,424 @@
+{
+  "_note": "Demo reading list for Engram. Fictional references (made-up authors, titles and DOIs) in the Zotero 7 local API format.",
+  "collections": [
+    {
+      "key": "DEMOPROJ",
+      "version": 1,
+      "data": {
+        "key": "DEMOPROJ",
+        "name": "Literature project",
+        "parentCollection": false
+      },
+      "meta": {
+        "numItems": 0
+      }
+    },
+    {
+      "key": "DEMOLITR",
+      "version": 1,
+      "data": {
+        "key": "DEMOLITR",
+        "name": "Microglia and pruning",
+        "parentCollection": "DEMOPROJ"
+      },
+      "meta": {
+        "numItems": 12
+      }
+    },
+    {
+      "key": "DEMOOTHR",
+      "version": 1,
+      "data": {
+        "key": "DEMOOTHR",
+        "name": "Other reading",
+        "parentCollection": false
+      },
+      "meta": {
+        "numItems": 0
+      }
+    }
+  ],
+  "items": {
+    "DEMOLITR": [
+      {
+        "key": "DEMO0001",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2021"
+        },
+        "data": {
+          "key": "DEMO0001",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Microglia as sculptors of the developing synapse",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Anna",
+              "lastName": "Hartley"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Chidi",
+              "lastName": "Okafor"
+            }
+          ],
+          "date": "2021",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Journal of Developmental Neuroscience",
+          "DOI": "10.0000/demo.2021.001"
+        }
+      },
+      {
+        "key": "DEMO0002",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2019"
+        },
+        "data": {
+          "key": "DEMO0002",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Complement tagging and the selective removal of weak synapses",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Erik",
+              "lastName": "Lindqvist"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Claire",
+              "lastName": "Moreau"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Wei",
+              "lastName": "Tan"
+            }
+          ],
+          "date": "2019",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Neuron Reports",
+          "DOI": "10.0000/demo.2019.002"
+        }
+      },
+      {
+        "key": "DEMO0003",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2022"
+        },
+        "data": {
+          "key": "DEMO0003",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Fractalkine signalling between neurons and microglia: a review",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Ngozi",
+              "lastName": "Abara"
+            }
+          ],
+          "date": "2022",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Glia Reviews",
+          "DOI": "10.0000/demo.2022.003"
+        }
+      },
+      {
+        "key": "DEMO0004",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2018"
+        },
+        "data": {
+          "key": "DEMO0004",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Activity-dependent pruning in the visual thalamus",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Marco",
+              "lastName": "Castellano"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Lucia",
+              "lastName": "Reyes"
+            }
+          ],
+          "date": "2018",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Cerebral Cortex Letters",
+          "DOI": "10.0000/demo.2018.004"
+        }
+      },
+      {
+        "key": "DEMO0005",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2020"
+        },
+        "data": {
+          "key": "DEMO0005",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Imaging microglial contacts in living tissue",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Petra",
+              "lastName": "Novak"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Ren",
+              "lastName": "Ishikawa"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Joana",
+              "lastName": "Duarte"
+            }
+          ],
+          "date": "2020",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Methods in Neuroimaging",
+          "DOI": "10.0000/demo.2020.005"
+        }
+      },
+      {
+        "key": "DEMO0006",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2023"
+        },
+        "data": {
+          "key": "DEMO0006",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Synapse elimination in adolescence and its links to psychiatric risk",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Sam",
+              "lastName": "Whitfield"
+            }
+          ],
+          "date": "2023",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Developmental Psychiatry",
+          "DOI": "10.0000/demo.2023.006"
+        }
+      },
+      {
+        "key": "DEMO0007",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2020"
+        },
+        "data": {
+          "key": "DEMO0007",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Phagocytic receptors on microglia: TREM2 and beyond",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Marta",
+              "lastName": "Kowalski"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Ade",
+              "lastName": "Bello"
+            }
+          ],
+          "date": "2020",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Immunity in the Brain",
+          "DOI": "10.0000/demo.2020.007"
+        }
+      },
+      {
+        "key": "DEMO0008",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2017"
+        },
+        "data": {
+          "key": "DEMO0008",
+          "version": 1,
+          "itemType": "book",
+          "title": "The Neuroimmune Synapse",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Helena",
+              "lastName": "Grant"
+            }
+          ],
+          "date": "2017",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ]
+        }
+      },
+      {
+        "key": "DEMO0009",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2022"
+        },
+        "data": {
+          "key": "DEMO0009",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Sex differences in microglial pruning during development",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Isla",
+              "lastName": "Fairbairn"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Kofi",
+              "lastName": "Mensah"
+            }
+          ],
+          "date": "2022",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Biology of Sex Differences in the CNS",
+          "DOI": "10.0000/demo.2022.009"
+        }
+      },
+      {
+        "key": "DEMO0010",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2021"
+        },
+        "data": {
+          "key": "DEMO0010",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Does microglial depletion prevent pruning? Evidence from knockout models",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Deniz",
+              "lastName": "Yilmaz"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Jin",
+              "lastName": "Park"
+            }
+          ],
+          "date": "2021",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Neuroscience Today",
+          "DOI": "10.0000/demo.2021.010"
+        }
+      },
+      {
+        "key": "DEMO0011",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2019"
+        },
+        "data": {
+          "key": "DEMO0011",
+          "version": 1,
+          "itemType": "book",
+          "title": "Writing a systematic literature review in the biosciences",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Ruth",
+              "lastName": "Ellison"
+            }
+          ],
+          "date": "2019",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ]
+        }
+      },
+      {
+        "key": "DEMO0012",
+        "version": 1,
+        "meta": {
+          "parsedDate": "2023"
+        },
+        "data": {
+          "key": "DEMO0012",
+          "version": 1,
+          "itemType": "journalArticle",
+          "title": "Astrocytes also prune: a counterpoint to the microglia-centric view",
+          "creators": [
+            {
+              "creatorType": "author",
+              "firstName": "Giulia",
+              "lastName": "Rossi"
+            },
+            {
+              "creatorType": "author",
+              "firstName": "Omar",
+              "lastName": "Haddad"
+            }
+          ],
+          "date": "2023",
+          "url": "",
+          "collections": [
+            "DEMOLITR"
+          ],
+          "publicationTitle": "Glia Reviews",
+          "DOI": "10.0000/demo.2023.012"
+        }
+      },
+      {
+        "key": "DEMONOTE",
+        "version": 1,
+        "data": {
+          "key": "DEMONOTE",
+          "itemType": "note",
+          "note": "Attachments and notes are left out."
+        }
+      }
+    ]
+  }
+}

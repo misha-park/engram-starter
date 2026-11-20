@@ -1,0 +1,51 @@
+/* Settings → Claude: the list of things Claude was asked to remember. */
+.list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 6px 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-3);
+  cursor: pointer;
+}
+
+.remove:hover {
+  background: var(--bg-3);
+  color: var(--text-1);
+}
+
+.add {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: 8px;
+}
+
+.add input {
+  flex: 1;
+}

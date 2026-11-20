@@ -1,0 +1,130 @@
+.dialog {
+  width: min(620px, calc(100vw - 64px));
+}
+
+.body {
+  max-height: min(72vh, 680px);
+  overflow: auto;
+}
+
+.drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg);
+  color: var(--text-3);
+  transition:
+    border-color 120ms var(--ease),
+    background 120ms var(--ease);
+}
+
+.drop[data-over] {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.reading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-5) 0;
+  color: var(--text-2);
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.draft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.narrow {
+  width: 90px;
+}
+
+.hours {
+  width: 70px;
+  font-variant-numeric: tabular-nums;
+}
+
+.heading {
+  margin-top: var(--space-2);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-strong);
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.iconButton {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  flex: none;
+  border-radius: var(--radius-md);
+  color: var(--text-3);
+}
+
+.iconButton:hover {
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.addStage {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  align-self: flex-start;
+  height: 26px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-md);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.addStage:hover {
+  background: var(--bg-2);
+  color: var(--text-1);
+}
+
+.missingDate {
+  height: 30px;
+  padding: 0 var(--space-3);
+  border: 1px dashed var(--danger);
+  border-radius: var(--radius-md);
+  color: var(--danger);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+}
+
+.missingDate:hover {
+  background: var(--danger-soft);
+}
+
+.missing {
+  color: var(--text-3);
+  font-size: var(--text-sm);
+}

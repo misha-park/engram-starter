@@ -1,0 +1,64 @@
+.layout {
+  display: flex;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--space-2);
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-2) var(--space-3) 0;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border));
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+  color: var(--text-1);
+  font-size: var(--text-sm);
+}
+
+.hint span {
+  flex: 1;
+}
+
+.hintButton {
+  padding: 3px 10px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: white;
+  font-size: var(--text-sm);
+}
+
+.tip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-2) var(--space-3) 0;
+  padding: 6px var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.tip span {
+  flex: 1;
+}
+
+.tipClose {
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: var(--text-sm);
+}
+
+.tipClose:hover {
+  background: var(--accent-soft);
+}

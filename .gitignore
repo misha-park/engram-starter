@@ -1,0 +1,33 @@
+# Dependencies and build output
+node_modules
+out
+dist
+.eslintcache
+*.log*
+.DS_Store
+
+# App data: never commit databases or records (demo or real)
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+data/
+profiles/
+records/
+
+# Secrets: timetable URL, OAuth tokens, Google credentials
+.env
+.env.*
+secrets/
+*.pem
+*.p12
+client_secret*.json
+credentials*.json
+token*.json
+
+# Calendar feeds: only the fake fixtures under resources/fixtures may be committed
+*.ics
+!resources/fixtures/**/*.ics
+
+# TypeScript incremental build info
+*.tsbuildinfo

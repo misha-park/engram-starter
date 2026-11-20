@@ -1,0 +1,258 @@
+.page {
+  height: 100%;
+  overflow: auto;
+  padding: var(--space-5) var(--space-6);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.title {
+  font-size: var(--text-xl);
+}
+
+.subtitle {
+  color: var(--text-3);
+}
+
+.muted {
+  color: var(--text-3);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: 18vh;
+  color: var(--text-2);
+  text-align: center;
+}
+
+.empty svg {
+  color: var(--text-3);
+  margin-bottom: var(--space-2);
+}
+
+.section {
+  max-width: 720px;
+  margin-bottom: var(--space-6);
+}
+
+.sectionTitle {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  font-weight: var(--weight-strong);
+  margin-bottom: var(--space-2);
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-1);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border);
+}
+
+.row:first-child {
+  border-top: none;
+}
+
+.grow {
+  flex: 1;
+  min-width: 0;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-3);
+  user-select: text;
+  overflow-wrap: anywhere;
+}
+
+.button {
+  height: 28px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+  color: var(--text-1);
+  white-space: nowrap;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--bg-3);
+}
+
+.button:disabled {
+  color: var(--text-3);
+}
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.segmented button {
+  height: 26px;
+  padding: 0 var(--space-3);
+  color: var(--text-2);
+}
+
+.segmented button[aria-pressed='true'] {
+  background: var(--bg-3);
+  color: var(--text-1);
+}
+
+.input {
+  height: 28px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  background: var(--bg-2);
+  color: var(--text-1);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  color-scheme: dark;
+}
+
+.dayToggles {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.dayToggles button {
+  height: 26px;
+  padding: 0 7px;
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
+  font-size: var(--text-sm);
+}
+
+.dayToggles button:hover {
+  background: var(--bg-2);
+}
+
+.dayToggles button[aria-pressed='true'] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.errorText {
+  color: var(--danger);
+}
+
+.errorText a {
+  color: inherit;
+}
+
+.reviewText {
+  margin: var(--space-2) 0 0;
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-2);
+}
+
+.switch input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.ok {
+  color: var(--rating-easy);
+  flex: none;
+}
+
+.bad {
+  color: var(--text-3);
+  flex: none;
+}
+
+.dayName {
+  width: 90px;
+  color: var(--text-1);
+}
+
+.stackedInputs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  max-width: 460px;
+}
+
+.stackedInputs textarea {
+  height: auto;
+  padding: 6px var(--space-2);
+  resize: vertical;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  user-select: text;
+}
+
+.link {
+  color: var(--accent);
+  font-size: var(--text-sm);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Settings: its sections listed down the right on a wide window. */
+.pageIndex {
+  position: fixed;
+  top: calc(var(--topbar-h) + 88px);
+  left: calc(var(--rail-w) + var(--space-6) + 720px + var(--space-6));
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 180px;
+}
+
+.pageIndex button {
+  padding: 4px 10px;
+  border-left: 2px solid var(--border);
+  color: var(--text-3);
+  font-size: var(--text-sm);
+  text-align: left;
+}
+
+.pageIndex button:hover {
+  color: var(--text-1);
+}
+
+.pageIndex button[aria-current] {
+  border-left-color: var(--accent);
+  color: var(--text-1);
+}
+
+.withIndex {
+  container-type: inline-size;
+}
+
+@container (max-width: 1000px) {
+  .pageIndex {
+    display: none;
+  }
+}

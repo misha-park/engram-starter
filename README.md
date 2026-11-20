@@ -26,9 +26,9 @@ saved so it can be undone. If you can't find the menu, don't worry: carry on, an
 > Hi Claude. A friend gave me an app to use as a starting point for my own study planner:
 > https://github.com/misha-park/engram-starter
 > I'm not technical, so please do all the technical steps yourself and explain things simply.
-> Please download it into a new folder called "Engram" inside my current folder, open that folder,
-> read the files CLAUDE.md and ONBOARDING.md in it, and then follow them to set everything up and
-> ask me what I need.
+> Please download it into a new folder called "Engram" inside my current folder (if git isn't
+> installed yet, download the zip from that link instead), open that folder, read the files
+> CLAUDE.md and ONBOARDING.md in it, and then follow them to set everything up and ask me what I need.
 
 **3. Answer Claude's questions.** It will install what it needs, show you the app on pretend data,
 and ask what you want to keep, change or add. Say what you want in your own words. If a Mac popup

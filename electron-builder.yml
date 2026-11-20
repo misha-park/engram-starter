@@ -30,7 +30,7 @@ asarUnpack:
   - node_modules/@anthropic-ai/claude-agent-sdk-darwin-*/**
 mac:
   target: dir
-  # Signing: with no `identity` set, electron-builder signs the app "ad hoc" on Apple Silicon (fine
+  # Signing: with no `identity` set, scripts/ensure-signed.cjs signs the app "ad hoc" after the build (fine
   # for an app built and used on the same Mac). The only side effect: macOS may ask once after each
   # update to let Engram use its saved secrets ("Engram Safe Storage"), because each build looks
   # like a new app. To stop that, sign every build with the same certificate: make a free "Apple

@@ -34,7 +34,7 @@ function filesIn(dir) {
   })
 }
 
-module.exports = async function signMac(opts) {
+async function signMac(opts) {
   const identity = typeof opts.identity === 'string' ? opts.identity : opts.identity?.hash
   if (!identity) throw new Error('No signing identity (mac.identity in electron-builder.yml).')
   const codesign = (...args) =>
@@ -53,3 +53,5 @@ module.exports = async function signMac(opts) {
   for (const file of filesIn(unpacked).filter(isMachO)) codesign(file)
   codesign('--deep', opts.app)
 }
+
+module.exports = signMac

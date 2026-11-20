@@ -23,10 +23,11 @@ Then, quietly, with a one-line update at each step:
 
 1. Make sure you are working inside the project folder (if the first message came from a different
    folder, `cd` there; all your later commands run there).
-2. **If you got here by cloning from a link:** disconnect the copy from the internet source so it
-   is fully hers (`git remote remove origin`), and make sure it is a git repo with the current
-   files committed as a first checkpoint ("Starting point"). If there is no git history, run
-   `git init` and commit. Never push anywhere.
+2. Make this copy fully hers. If it was cloned with git and still has a remote, remove it
+   (`git remote remove origin`). If it came as a zip (no git yet), run `git init` once the tools in
+   step 3 are in place. Either way, make sure everything is committed as a first checkpoint
+   ("Starting point"). Never push anywhere. (If `git` itself is missing, do step 3's Command Line
+   Tools first.)
 3. Check the tools: macOS version, `git`, `node -v` (needs version 22 or newer), `npm`. Install
    what is missing without needing her:
    - Command Line Tools: if `xcode-select -p` fails, run `xcode-select --install`. A macOS popup

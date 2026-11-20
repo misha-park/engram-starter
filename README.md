@@ -8,7 +8,7 @@ You do not need to know anything technical. Claude does all of that part.
 
 ## What you need
 
-- A **Mac** (Apple Silicon or Intel).
+- A **Mac with an Apple chip** (any MacBook from late 2020 onwards).
 - The **Claude app** from claude.ai/download, signed in to a paid Claude plan (Pro or Max).
   It has a **Code** tab: that's what you'll use.
 - About **30 minutes** the first time. You can stop and carry on later: Claude saves its progress.
@@ -19,7 +19,7 @@ You do not need to know anything technical. Claude does all of that part.
 is fine). Then, in the little menu next to the message box that says how Claude asks for
 permission, choose **Bypass permissions**. (This means Claude won't stop to ask before every
 small step. It only works inside this project and the app's own data, and every change it makes is
-saved so it can be undone.)
+saved so it can be undone. If you can't find the menu, don't worry: carry on, and click Allow if Claude asks.)
 
 **2. Copy this message, paste it in, and send it:**
 
